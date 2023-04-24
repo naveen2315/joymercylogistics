@@ -72,17 +72,17 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav m-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="index.html" class="nav-item nav-link  active">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Service</a>
-                    <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
                 <a href="#" class="btn btn-primary py-2 px-4 d-none d-lg-block" onclick="sendWhatsAppMessage()">Get In Touch</a>
 
                 <script>
                 function sendWhatsAppMessage() {
                   const message = "Hello, I request a call back and want to know more about Joymercy logistics and its services";
-                  const url = "https://api.whatsapp.com/send?phone=9502772777&text=" + encodeURIComponent(message);
+                  const url = "https://api.whatsapp.com/send?phone=+919502772777&text=" + encodeURIComponent(message);
                   window.open(url, '_blank');
 
                 }
@@ -234,7 +234,7 @@
                             function sendWhatsAppMessage() {
                                 const name = document.getElementById('name-input').value;
                                 const message = "Hello, I'm " + name + ", I request a call back and want to know more about Joymercy logistics and its services";
-                                const url = "https://api.whatsapp.com/send?phone=9502772777&text=" + encodeURIComponent(message);
+                                const url = "https://api.whatsapp.com/send?phone=+919502772777&text=" + encodeURIComponent(message);
                                 window.open(url, '_blank');
                             }
                         </script>
