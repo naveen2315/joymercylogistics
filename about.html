@@ -289,13 +289,13 @@
                     <div class="input-group">
                         <input type="tel" class="form-control border-light" style="padding: 30px;" placeholder="Your Phone Number">
                         <div class="input-group-append">
-                            <button class="btn btn-primary px-4" onclick="sendWhatsAppMessage()">Send</button>
+                            <button class="btn btn-primary px-4" onclick="sendContactMessage()">Send</button>
                         </div>
                     </div>
                 </div>
                 
                 <script>
-                    function sendWhatsAppMessage() {
+                    function sendContactMessage() {
                         const phoneNumber = document.querySelector('input[type="tel"]').value;
                         const message = `Hi, I'm interested in your services. Please contact me at this number: ${phoneNumber}`;
                         const encodedMessage = encodeURIComponent(message);
