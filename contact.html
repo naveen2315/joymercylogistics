@@ -148,7 +148,7 @@
                           <p class="help-block text-danger"></p>
                         </div>
                         <div>
-                          <button class="btn btn-primary py-3 px-4" type="button" id="sendMessageButton" onclick="sendWhatsapp()">Send
+                          <button class="btn btn-primary py-3 px-4" type="button" id="sendMessageButton" onclick="sendContactMessage()">Send
                             Message</button>
                         </div>
                       </form>
@@ -156,7 +156,7 @@
                   </div>
                   
                   <script>
-                    function sendWhatsapp() {
+                    function sendContactMessage() {
                       const name = document.getElementById("name").value;
                       const email = document.getElementById("email").value;
                       const subject = document.getElementById("subject").value;
@@ -217,13 +217,13 @@
                         <input type="tel" class="form-control border-light" style="padding: 30px;"
                             placeholder="Your Phone Number">
                         <div class="input-group-append">
-                            <button class="btn btn-primary px-4" onclick="sendWhatsAppMessage()">Send</button>
+                            <button class="btn btn-primary px-4" onclick="keepInTouchMessage()">Send</button>
                         </div>
                     </div>
                 </div>
 
                 <script>
-                    function sendWhatsAppMessage() {
+                    function keepInTouchMessage() {
                         const phoneNumber = document.querySelector('input[type="tel"]').value;
                         const message = `Hi, I'm interested in your services. Please contact me at this number: ${phoneNumber}`;
                         const encodedMessage = encodeURIComponent(message);
