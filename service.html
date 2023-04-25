@@ -76,10 +76,10 @@
                     <a href="service.html" class="nav-item nav-link active">Service</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="#" class="btn btn-primary py-2 px-4 d-none d-lg-block" onclick="sendWhatsAppMessage()">Get In Touch</a>
+                <a href="#" class="btn btn-primary py-2 px-4 d-none d-lg-block" onclick="sendMessageonWA()">Get In Touch</a>
 
                 <script>
-                function sendWhatsAppMessage() {
+                function sendMessageonWA() {
                   const message = "Hello, I request a call back and want to know more about Joymercy logistics and its services";
                   const url = "https://wa.me/+919502772777?text=" + encodeURIComponent(message);
                   window.open(url, '_blank');
@@ -211,12 +211,12 @@
                               </select>
                             </div> -->
                             <div>
-                              <button class="btn btn-dark btn-block border-0 py-3" type="submit" onclick="sendWhatsAppMessage()">Contact</button>
+                              <button class="btn btn-dark btn-block border-0 py-3" type="submit" onclick="sendCallBackMessage()">Contact</button>
                             </div>
                           </form>
                           
                           <script>
-                            function sendWhatsAppMessage() {
+                            function sendCallBackMessage() {
                               const name = document.getElementById('name-input').value;
                               const message = "Hello, I'm " + name + ", I request a call back and want to know more about Joymercy logistics and its services";
                               const url = "https://wa.me/+919502772777?text=" + encodeURIComponent(message);
@@ -329,13 +329,13 @@
                     <div class="input-group">
                         <input type="tel" class="form-control border-light" style="padding: 30px;" placeholder="Your Phone Number">
                         <div class="input-group-append">
-                            <button class="btn btn-primary px-4" onclick="sendWhatsAppMessage()">Send</button>
+                            <button class="btn btn-primary px-4" onclick="sendContactMessage()">Send</button>
                         </div>
                     </div>
                 </div>
                 
                 <script>
-                    function sendWhatsAppMessage() {
+                    function sendContactMessage() {
                         const phoneNumber = document.querySelector('input[type="tel"]').value;
                         const message = `Hi, I'm interested in your services. Please contact me at this number: ${phoneNumber}`;
                         const encodedMessage = encodeURIComponent(message);
