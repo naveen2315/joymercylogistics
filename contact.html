@@ -148,7 +148,7 @@
                           <p class="help-block text-danger"></p>
                         </div>
                         <div>
-                          <button class="btn btn-primary py-3 px-4" type="button" id="sendMessageButton" onclick="sendContactMessage()">Send
+                          <button class="btn btn-primary py-3 px-4" type="button" id="sendMessageButton" onclick="sendDetails()">Send
                             Message</button>
                         </div>
                       </form>
@@ -156,7 +156,7 @@
                   </div>
                   
                   <script>
-                    function sendContactMessage() {
+                    function sendDetails() {
                       const name = document.getElementById("name").value;
                       const email = document.getElementById("email").value;
                       const subject = document.getElementById("subject").value;
