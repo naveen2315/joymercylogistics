@@ -76,12 +76,12 @@
                     <a href="service.html" class="nav-item nav-link active">Service</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="#" class="btn btn-primary py-2 px-4 d-none d-lg-block" onclick="sendWhatsAppMessage()">Get In Touch</a>
+                <a href="#" class="btn btn-primary py-2 px-4 d-none d-lg-block" onclick="sendMessageonWA()">Get In Touch</a>
 
                 <script>
-                function sendWhatsAppMessage() {
+                function sendMessageonWA() {
                   const message = "Hello, I request a call back and want to know more about Joymercy logistics and its services";
-                  const url = "https://api.whatsapp.com/send?phone=+919502772777&text=" + encodeURIComponent(message);
+                  const url = "https://wa.me/+919502772777?text=" + encodeURIComponent(message);
                   window.open(url, '_blank');
 
                 }
@@ -211,18 +211,21 @@
                               </select>
                             </div> -->
                             <div>
-                              <button class="btn btn-dark btn-block border-0 py-3" type="submit" onclick="sendWhatsAppMessage()">Contact</button>
+                              <button class="btn btn-dark btn-block border-0 py-3" type="submit" onclick="sendCallBackMessage()">Contact</button>
                             </div>
                           </form>
                           
                           <script>
-                            function sendWhatsAppMessage() {
-                              const name = document.getElementById('name-input').value;
-                              const message = "Hello, I'm " + name + ", I request a call back and want to know more about Joymercy logistics and its services";
-                              const url = "https://api.whatsapp.com/send?phone=+919502772777&text=" + encodeURIComponent(message);
-                              window.open(url, '_blank');
+                            function sendCallBackMessage() {
+                                const name = document.getElementById('name-input').value;
+                                const message = "Hello, I'm " + name + ", I request a call back and want to know more about Joymercy logistics and its services";
+                                const encodedText = encodeURIComponent(message);
+                                const mobile = +919502772777
+                      const num = mobile.toString()
+                      const url = `https://wa.me/${num}?text=${encodedText}`;
+                                window.open(url, '_blank');
                             }
-                          </script>
+                        </script>
                           
                     </div>
                 </div>
@@ -233,60 +236,7 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="text-center pb-2">
-                <h6 class="text-primary text-uppercase font-weight-bold">Testimonial</h6>
-                <h1 class="mb-4">Our Clients Say</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="position-relative bg-secondary p-4">
-                    <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid rounded-circle" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;" alt="">
-                        <div class="ml-3">
-                            <h6 class="font-weight-semi-bold m-0">Client Name</h6>
-                            <small>- Profession</small>
-                        </div>
-                    </div>
-                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita</p>
-                </div>
-                <div class="position-relative bg-secondary p-4">
-                    <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid rounded-circle" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;" alt="">
-                        <div class="ml-3">
-                            <h6 class="font-weight-semi-bold m-0">Client Name</h6>
-                            <small>- Profession</small>
-                        </div>
-                    </div>
-                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita</p>
-                </div>
-                <div class="position-relative bg-secondary p-4">
-                    <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid rounded-circle" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;" alt="">
-                        <div class="ml-3">
-                            <h6 class="font-weight-semi-bold m-0">Client Name</h6>
-                            <small>- Profession</small>
-                        </div>
-                    </div>
-                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita</p>
-                </div>
-                <div class="position-relative bg-secondary p-4">
-                    <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid rounded-circle" src="img/testimonial-4.jpg" style="width: 60px; height: 60px;" alt="">
-                        <div class="ml-3">
-                            <h6 class="font-weight-semi-bold m-0">Client Name</h6>
-                            <small>- Profession</small>
-                        </div>
-                    </div>
-                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita</p>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Testimonial End -->
 
 
@@ -329,18 +279,20 @@
                     <div class="input-group">
                         <input type="tel" class="form-control border-light" style="padding: 30px;" placeholder="Your Phone Number">
                         <div class="input-group-append">
-                            <button class="btn btn-primary px-4" onclick="sendWhatsAppMessage()">Send</button>
+                            <button class="btn btn-primary px-4" onclick="sendContactMessage()">Send</button>
                         </div>
                     </div>
                 </div>
                 
                 <script>
-                    function sendWhatsAppMessage() {
+                    function sendContactMessage() {
                         const phoneNumber = document.querySelector('input[type="tel"]').value;
                         const message = `Hi, I'm interested in your services. Please contact me at this number: ${phoneNumber}`;
                         const encodedMessage = encodeURIComponent(message);
-                        const whatsappLink = `https://wa.me/9502772777?text=${encodedMessage}`;
-                        window.location.href = whatsappLink;
+                        const mobile = +919502772777
+                      const num = mobile.toString()
+                      const url = `https://wa.me/${num}?text=${encodedMessage}`;
+                      window.open(url, '_blank');
                     }
                 </script>
                 
