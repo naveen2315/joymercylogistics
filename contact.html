@@ -161,10 +161,10 @@
                       const email = document.getElementById("email").value;
                       const subject = document.getElementById("subject").value;
                       const message = document.getElementById("message").value;
-                      const text = `Hi, my name is ${name}. My email address is ${email}. I have a question regarding ${subject}. ${message}`;
-                      const encodedText = encodeURIComponent(text);
                       const mobile = +919502772777
                       const num = mobile.toString()
+                      const text = `Hi, my name is ${name}. My email address is ${email}. I have a question regarding ${subject}. ${message}`;
+                      const encodedText = encodeURIComponent(text);
                       const url = `https://wa.me/${num}?text=${encodedText}`;
                       window.open(url, '_blank');
                     }
@@ -219,7 +219,7 @@
                         <input type="tel" class="form-control border-light" style="padding: 30px;"
                             placeholder="Your Phone Number">
                         <div class="input-group-append">
-                            <button class="btn btn-primary px-4" onclick="keepInTouchMessage()">Send</button>
+                            <button class="btn btn-primary px-4" onclick="sendContactMessage()">Send</button>
                         </div>
                     </div>
                 </div>
@@ -229,9 +229,10 @@
                         const phoneNumber = document.querySelector('input[type="tel"]').value;
                         const message = `Hi, I'm interested in your services. Please contact me at this number: ${phoneNumber}`;
                         const encodedMessage = encodeURIComponent(message);
-                        const url = "https://wa.me/+919502772777?text=" + encodeURIComponent(message);
-                        window.location.href = whatsappLink;
-                        window.open(url, '_blank');
+                        const mobile = +919502772777
+                      const num = mobile.toString()
+                      const url = `https://wa.me/${num}?text=${encodedMessage}`;
+                      window.open(url, '_blank');
                     }
                 </script>
 
