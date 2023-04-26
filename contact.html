@@ -163,7 +163,9 @@
                       const message = document.getElementById("message").value;
                       const text = `Hi, my name is ${name}. My email address is ${email}. I have a question regarding ${subject}. ${message}`;
                       const encodedText = encodeURIComponent(text);
-                      const url = `https://wa.me/9502772777?text=${encodedText}`;
+                      const mobile = +919502772777
+                      const num = mobile.toString()
+                      const url = `https://wa.me/${num}?text=${encodedText}`;
                       window.open(url, '_blank');
                     }
                   </script>
@@ -223,12 +225,13 @@
                 </div>
 
                 <script>
-                    function keepInTouchMessage() {
+                    function sendContactMessage() {
                         const phoneNumber = document.querySelector('input[type="tel"]').value;
                         const message = `Hi, I'm interested in your services. Please contact me at this number: ${phoneNumber}`;
                         const encodedMessage = encodeURIComponent(message);
-                        const whatsappLink = `https://wa.me/9502772777?text=${encodedMessage}`;
+                        const url = "https://wa.me/+919502772777?text=" + encodeURIComponent(message);
                         window.location.href = whatsappLink;
+                        window.open(url, '_blank');
                     }
                 </script>
 
