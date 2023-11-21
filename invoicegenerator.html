@@ -1,0 +1,181 @@
+<body id="form">
+  <form>
+<header style="text-align: center; padding: 20px;">
+	 <link rel="stylesheet" href="/invoice-generator.css">
+    <script src="/invoice-generator.js"></script>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <div class="logo-container" style="margin-right: 20px; max-width: 100px;">
+            <!-- Add your logo image here -->
+            <img src="https://www.joymercylogistics.com/img/jmlogo.png" alt="Company Logo" style="width: 100%; height: auto;">
+        </div>
+        <div class="company-info">
+          <h1 style="font-weight: bold; font-size: 2em; font-family: 'Roboto', sans-serif; letter-spacing: 0.1em; text-align: center; text-transform: uppercase; margin-bottom: 20px;">
+    JoyMercy Logistics
+</h1>
+<p style="font-size: 1em; font-family: 'Roboto', sans-serif; line-height: 1.2;">
+    <span style="font-weight: bold;">GSTIN :</span> Plot No 444, HMT hills, Kukatpally,  Hyderabad, Telangana 500085
+</p>
+
+
+
+        </div>
+    </div>
+</header>
+
+
+ 
+    <article class="invoicebody">
+<!-- 	    <div class="left_info">
+	      <input type="text" class="clientDetails" id="company_name"  placeholder="Company Name"><br>
+	      <input type="text" class="clientDetails" id="customer_name" placeholder="Address"><br>
+	      <input type="text" class="clientDetails" id="occupation"    placeholder="Contact Person"><br>
+	      <input type="text" class="clientDetails" id="afm"           placeholder="Contact No"><br>
+	      <input type="text" class="clientDetails" id="doy"           placeholder="Email">
+		</div> -->
+      <table class="meta" id="top_data_table">
+         <tbody>
+          <tr class="" id="invoice_number_row">
+            <th class="bold"><span class="invoice" id="invoice">Reference&nbsp;No</span></th> 
+            <td id="time"></td>
+          </tr>
+
+          <tr id="daterow">
+            <th class="bold"><span class="date" id="date">Date</span></th>
+            <td><span contenteditable=""><input type="date" id="theDate"></span></td>
+          </tr>
+
+          <tr class="" id="total_block">
+            <th class="bold"><span class="amount" id="amount">Amout</span></th>
+            <td><span id="prefix">&#8377;</span><span></span></td>
+          </tr>
+
+        </tbody>
+      </table>
+	<div class="min_height">
+      <table class="inventory">
+        <thead>
+          <tr>
+            <th class="bold">
+              <span class="item" id="item">Equipment Name & Model</span>
+            </th>
+            <th class="bold">
+              <span class="description" id="description">HSN code & GST</span>
+            </th>
+            <th class="bold">
+              <span class="rate" id="rate">Unit Price</span>
+            </th>
+            <th class="bold">
+              <span class="quantity" id="quantity">Quantity</span>
+            </th>
+            <th class="bold">
+              <span class="price" id="price">Total Price</span>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <a class="cut" title="Remove Item">-</a>
+              <span contenteditable></span>
+            </td>
+            <td>
+              <span contenteditable></span>
+              </td>
+            <td>
+              <span data-prefix>&#8377;</span>
+              <span contenteditable>0.00</span>
+            </td>
+            <td>
+              <span contenteditable>1</span>
+            </td>
+            <td>
+              <span data-prefix>&#8377;</span><span>0.00</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <a class="add noprint" title="Add Item">+</a>
+      <div class="left_btn">
+      		<button class="mah_btn" onclick="myprint()">Print</button>
+      		<button class="mah_btn" onClick="window.location.reload()">Reset</button>
+      </div>
+      <div class="right_tax">
+      <table class="balance" id="balance">
+        <tbody>
+
+          <tr>
+            <th class="bold">
+              <span class="subtotal" id="subtotal">Subtotal</span>
+            </th>
+            <td>
+              <span>&#8377;</span><span>0.00</span>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="bold">
+              <span class="tax" id="tax" contenteditable="">Include GST&nbsp;</span>
+              <span contenteditable="">18</span>%
+            </th>
+            <td>
+              <span>&#8377;</span><span>0.00</span>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="bold">
+              <span class="total" id="total">Total</span>
+            </th>
+            <td>
+              <span>&#8377; </span><span>0.00</span>
+            </td>
+          </tr>
+
+        </tbody>
+      </table> 
+      </div>     
+	</div>
+    </article>
+  </form>
+
+
+<script>
+
+(function () {
+    function checkTime(i) {
+        return (i < 10) ? "0" + i : i;
+    }
+
+    function startTime() {
+        var times = new Date(),
+        
+            hh = checkTime(times.getHours()),
+            mm = checkTime(times.getMinutes()),
+            ss = checkTime(times.getSeconds()),
+            yy = checkTime(times.getFullYear().toString(10).substring(2, 4)),
+            MM = checkTime(times.getMonth() + 1),
+            dd = checkTime(times.getDate())
+            ;
+        document.getElementById('time').innerHTML = yy + "" + MM + "" + dd + "" + hh + "" + mm + "" + ss ;
+        t = setTimeout(function () {
+            startTime1()
+        }, 500);
+    }
+    startTime();
+})();
+
+var date = new Date();
+
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+
+var today = year + "-" + month + "-" + day;
+
+
+document.getElementById('theDate').value = today;
+</script>
